@@ -1,0 +1,19 @@
+@extends('layouts.base')
+
+@section('content')
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="pull-left">Cadastrar $MODEL_NAME_HUMAN$</h2>
+            </div>
+        </div>
+
+        @include('core-templates::common.errors')
+
+        {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
+
+            <div class="row">
+                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+            </div>
+
+        {!! Form::close() !!}
+@endsection

@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07/11/2018, 09:56:36
+    Author     : Eduardo Matias <eduardomatias@pbh.gov.br/eduardomatias.1989@gmail.com>
+*/
+
+.data-red {
+    color: red;
+    font-weight: bold;
+}
+
+label.error {
+    display: block;
+    color: red;
+}
+
+/** CSS AutoComplete - twitter-typeahead */
+.twitter-typeahead, .twitter-typeahead .tt-menu{
+    width: 100% ! important;
+    font-weight: normal;
+}
+.twitter-typeahead .tt-menu {
+    max-height: 150px;
+    overflow-y: auto;
+}
+.twitter-typeahead .tt-suggestion {
+    font-weight:normal; 
+    margin-top:-10px ! important;
+}
+.twitter-typeahead .tt-suggestion:hover {
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+/** CSS fieldset em formuário */
+.form-group fieldset {
+    border: 1px #CCC solid; 
+    padding: 10px 25px;
+    margin-bottom: 20px;
+}
+.form-group fieldset legend {
+    width: auto; 
+    padding: 0 10px
+}
+
+/** Input copy */
+i.btn-input-copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-top: 31px;
+    padding: 8px 5px;
+    
+    font-size: .7875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    opacity: 0.7;
+}
+i.btn-input-copy:hover {
+    opacity: 1;
+}

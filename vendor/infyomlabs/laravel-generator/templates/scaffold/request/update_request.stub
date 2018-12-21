@@ -1,0 +1,42 @@
+<?php
+
+namespace $NAMESPACE_REQUEST$;
+
+class Update$MODEL_NAME$Request extends BaseRequest
+{
+    
+    /** @var string Related model */
+    protected $modelRequest = '$NAMESPACE_MODEL$\$MODEL_NAME$';
+
+    /**
+     * Get attributes name.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return $this->modelRequest::$attributeLabel;
+    }
+    
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return $this->rulesRequiredOff($this->modelRequest::rules($this->getIdRules()));
+    }
+    
+    /**
+     * Runs before validating the request.
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function beforeValidator($request)
+    {
+        
+    }
+    
+}

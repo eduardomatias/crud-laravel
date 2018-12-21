@@ -1,0 +1,66 @@
+<?php
+
+namespace $NAMESPACE_MODEL$;
+
+$SOFT_DELETE_IMPORT$
+$DOCS$
+class $MODEL_NAME$ extends BaseModel
+{
+    public $table = '$TABLE_NAME$';
+
+$PRIMARY$
+    public $incrementing = false;
+
+    /**
+     * IMPORTANT: Quando a exclusao for logica
+     * descomentar as duas proximas linhas e edite a const: DELETED_AT
+     */
+    // $SOFT_DELETE$
+    // protected $softDelete = false;
+    $TIMESTAMPS$
+$SOFT_DELETE_DATES$
+    public $fillable = [
+        $FIELDS$
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        $CAST$
+    ];
+
+    /**
+     * The attribute label.
+     *
+     * @var array
+     */
+    public static $attributeLabel = [        
+        $ATTRIBUTE_LABEL$
+    ];
+    
+    /**
+     * The attributes that will be normalized.
+     *
+     * @var array
+     */
+    public static $attributeNormalize = [
+        $FIELDS$
+    ];
+    
+    /**
+     * Validation rules
+     *
+     * @return array
+     */
+    public static function rules($id = 'NULL')
+    {
+        return [
+            $RULES$
+        ];
+    }
+
+    $RELATIONS$
+}
