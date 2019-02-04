@@ -8,6 +8,11 @@ use Illuminate\Container\Container as Application;
 abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepository
 {
     
+    public function new()
+    {
+        return new $this->model;
+    }
+    
     public function findWithoutFail($id, $columns = ['*'])
     {
         try {
