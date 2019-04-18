@@ -12,7 +12,7 @@
  */
 
  /** Index */
-Route::get('/', function(){
+Route::get('/', function(){	
 	return view('index');
 });
 
@@ -30,3 +30,8 @@ Route::group(['middleware' => 'auth'], function() {
     });
     
 });
+
+
+Route::resource('produtos', 'ProdutoController');
+
+Route::resource('usuarios', 'UsuariosController');

@@ -1,2 +1,9 @@
 node_modules/
 nbproject/
+app/Http/
+storage/
+app/
+resources/views/produtos/
+resources/views/usuarios/
+vendor/composer/
+.env

@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.main')
 
 @section('css')
 @endsection
@@ -7,9 +7,7 @@
 
         @include('flash::message')
 
-        @if($currentPermissao['cadastrar'])
-            <a class="btn btn-primary pull-right crud-btn-cadastrar" href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') !!}">Cadastrar</a>
-        @endif
+        <a class="btn btn-primary pull-right crud-btn-cadastrar" href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') !!}">Cadastrar</a>
         
         <h2 class="pull-left">$MODEL_NAME_PLURAL_HUMAN$</h2>
 
