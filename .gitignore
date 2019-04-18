@@ -6,4 +6,3 @@ app/
 resources/views/produtos/
 resources/views/usuarios/
 vendor/composer/
-.env
