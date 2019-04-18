@@ -12,8 +12,8 @@
  */
 
  /** Index */
-Route::get('/', function(){	
-	return view('index');
+Route::get('/', function() {	
+  return view('index');
 });
 
 /** Login */
@@ -30,7 +30,6 @@ Route::group(['middleware' => 'auth'], function() {
     });
     
 });
-
 
 Route::resource('produtos', 'ProdutoController');
 

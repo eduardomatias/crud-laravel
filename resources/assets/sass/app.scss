@@ -1,15 +1,10 @@
 
+// sass --watch ./app.scss ../../../public/css/custom.css 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,600");
 
 // Variables
 @import "variables";
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-// Loaders
-@import '~pure-css-loader/dist/css-loader';
 
 // layout
 @import 'layout-sistema';
