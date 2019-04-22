@@ -30,7 +30,3 @@ Route::group(['middleware' => 'auth'], function() {
     });
     
 });
-
-Route::resource('produtos', 'ProdutoController');
-
-Route::resource('usuarios', 'UsuariosController');
