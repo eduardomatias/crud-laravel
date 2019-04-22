@@ -165,11 +165,11 @@ return [
 
         'enabled'       => true,
 
-        'created_at'    => 'dat_cadt',
+        'created_at'    => 'created_at',
 
-        'updated_at'    => 'dat_ulti_altr',
+        'updated_at'    => 'updated_at',
 
-        'deleted_at'    => 'dat_delete',
+        'deleted_at'    => 'deleted_at',
     ],
 
     /*

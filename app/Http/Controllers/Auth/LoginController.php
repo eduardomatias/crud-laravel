@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppBaseController;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-class LoginController extends Controller
+class LoginController extends AppBaseController
 {
     /*
     |--------------------------------------------------------------------------
@@ -43,6 +43,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        parent::__construct();
     }
     
     public function login(Request $request)

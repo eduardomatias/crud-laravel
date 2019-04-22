@@ -25,7 +25,7 @@ abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepositor
     /**
      * Verfifica se o registro existe a partir do ID
      * 
-     * @author Eduardo Matias <eduardomatias@pbh.gov.br/eduardomatias.1989@gmail.com>
+     * @author Eduardo Matias <eduardomatias.1989@gmail.com>
      * @param Int $id model->find($id)
      * @param String $msg 'Registro não encontrado.'
      * @return Model:find|Exception
@@ -43,7 +43,7 @@ abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepositor
      * Obtem dados organizados em um array (chave|valor)
      * uma alternativa para obter itens de um combo, select, autocomplete ou lista
      * 
-     * @author Eduardo Matias <eduardomatias@pbh.gov.br/eduardomatias.1989@gmail.com>
+     * @author Eduardo Matias <eduardomatias.1989@gmail.com>
      * @param String $columns_key
      * @param String $columns_value
      * @param String $where 

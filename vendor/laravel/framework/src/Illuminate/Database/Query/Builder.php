@@ -1676,7 +1676,7 @@ class Builder
     /**
      * Add an "order by column nulls last" clause to the query.
      *
-     * @author Eduardo Matias <eduardomatias@pbh.gov.br/eduardomatias.1989@gmail.com>
+     * @author Eduardo Matias <eduardomatias.1989@gmail.com>
      * @param  string  $column
      * @param  string  $direction
      * @return $this
@@ -1694,7 +1694,7 @@ class Builder
     /**
      * Add an "specific order by" clause to the query.
      *
-     * @author Eduardo Matias <eduardomatias@pbh.gov.br/eduardomatias.1989@gmail.com>
+     * @author Eduardo Matias <eduardomatias.1989@gmail.com>
      * @param  string  $column
      * @param  string  $orderValue
      * @return $this

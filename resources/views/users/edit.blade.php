@@ -9,14 +9,14 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <h2 class="pull-left">Editar $MODEL_NAME_HUMAN$</h2>
+                <h2 class="pull-left">Editar Usuário</h2>
             </div>
         </div>
 
-        {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'patch']) !!}
+        {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) !!}
 
             <div class="row">
-                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+                @include('users.fields')
             </div>
 
         {!! Form::close() !!}

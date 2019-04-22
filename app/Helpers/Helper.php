@@ -9,88 +9,28 @@ class Helper
 {
 
     /**
-     * formataDatetimeToDate
-     *
-     * formata a data invertendo os valores tirando o separador atual para um
-     * especificado e removendo o horário
+     * parseDate
      *
      * @param string $data data original
+     * @param bool $time indica se exibe a hora
      * @param string $quem qual separador atual
-     * @param char $por qual novo separador
+     * @param string $por qual novo separador
      */
-    public static function getDateFromDatetime($data, string $quem = '-', string $por = '/') : string
+    public static function parseDate(string $data, bool $time = false, string $quem = '-', string $por = '/') : string
     {
-        if (!is_null($data)) {
+        $dataFormatada = '';
+        if ($data) {
             $dataHorario = explode(' ', $data);
             $dataSeparada = explode($quem, $dataHorario[0]);
-            $data = $dataSeparada[2] . $por . $dataSeparada[1] . $por . $dataSeparada[0];
-        } else {
-            $data = '';
+            $dataFormatada = $dataSeparada[2] . $por . $dataSeparada[1] . $por . $dataSeparada[0] . ((!$time || !key_exists(1, $dataHorario)) ? '' : ' ' . $dataHorario[1]);
         }
-        return $data;
+        return $dataFormatada;
+    }
+    public static function parseDateTime(string $data, string $quem = '-', string $por = '/') : string
+    {
+        return self::parseDate($data, true, $quem, $por);
     }
     
-    /**
-     * formataDatetimeToDate
-     *
-     * formata a data invertendo os valores tirando o separador atual para um
-     * especificado e removendo o horário
-     *
-     * @param string $data data original
-     * @param string $quem qual separador atual
-     * @param char $por qual novo separador
-     */
-    public static function getUSDateFromDatetime($data, string $quem = '-', string $por = '-') : string
-    {
-        if (!is_null($data)) {
-            $dataHorario = explode(' ', $data);
-            $dataSeparada = explode($quem, $dataHorario[0]);
-            $data = $dataSeparada[0] . $por . $dataSeparada[1] . $por . $dataSeparada[2];
-        } else {
-            $data = '';
-        }
-        return $data;
-    }    
-    
-    /**
-     * formataDatetimeToDataHoraBrasil
-     *
-     * formata a data invertendo os valores tirando o separador atual para um
-     * especificado e removendo o horário
-     *
-     * @param string $data data original
-     * @param string $quem qual separador atual
-     * @param char $por qual novo separador
-     */
-    public static function getDataHoraBrasilFromDatetime($data, string $quem = '-', string $por = '/') : string
-    {
-        if (!is_null($data)) {
-            $dataHorario = explode(' ', $data);
-            $dataSeparada = explode($quem, $dataHorario[0]);
-            $data = $dataSeparada[2] . $por . $dataSeparada[1] . $por . $dataSeparada[0] . ' ' . $dataHorario[1];
-        } else {
-            $data = '';
-        }
-        return $data;
-    }
-    /**
-     * formataDateTimeToTime
-     *
-     * formata o datetime para pegar somente os valores do horário
-     *
-     * @param string $data data original
-     */
-    public static function getTimeFromDateTime($data) : string
-    {
-        if (!is_null($data)) {
-            $dataHorario = explode(' ', $data);
-            $horaSeparada = explode(':', $dataHorario[1]);
-            $data = $horaSeparada[0] . ':' . $horaSeparada[1];
-        } else {
-            $data = '';
-        }
-        return $data;
-    }
     /**
      * formataNomeBusca
      *
@@ -107,21 +47,6 @@ class Helper
         } 
         return trim($retorno);
       }
-
-    /**
-     * criaObjetoDate
-     *
-     * Cria um objeto carbon (date) no formato correto para salvar
-     *
-     * @param string $data data original
-     */
-    public static function criaObjetoDate($data)
-    {
-        // $carbon = new Carbon();
-        // return $carbon->createFromFormat('d/m/Y',$retorno->hora_marcacao)->format('Y-m-d H:i:s');
-
-        return 'xxxx-xx-xx xx:xx:xx';
-    }
 
     /**
      * método que retorna query como lista ordenada e paginada
@@ -178,13 +103,13 @@ class Helper
     }
     
     /**
-     * parseIndSitu
+     * parseSitu
      *
      * retorna o nome da situação a partir do codigo
      *
      * @param string
      */
-    public static function parseIndSitu($cod) :string
+    public static function parseSitu($cod) :string
     {
         switch ($cod) {
             case 'A':
@@ -224,7 +149,7 @@ class Helper
         }
 
         // sequências invalidas
-	if ($cpf == '00000000000' || 
+	    if ($cpf == '00000000000' || 
             $cpf == '11111111111' || 
             $cpf == '22222222222' || 
             $cpf == '33333333333' || 
@@ -234,7 +159,7 @@ class Helper
             $cpf == '77777777777' || 
             $cpf == '88888888888' || 
             $cpf == '99999999999') {
-		return false;
+		    return false;
         }
         
         // Calcula os digitos verificadores
@@ -263,6 +188,21 @@ class Helper
             ''  => 'Selecione', 
             'F' => 'Feminino', 
             'M' => 'Masculino'
+        ];
+    }
+
+    /**
+     * Obtem um array com as situacoes
+     * 
+     * @author Eduardo Matias <eduardomatias@pbh.gov.br/eduardomatias.1989@gmail.com>
+     * @return Array
+     */
+    public static function getComboSitu()
+    {
+        return [
+            ''  => 'Selecione', 
+            1 => 'Ativo', 
+            0 => 'Inativo'
         ];
     }
 

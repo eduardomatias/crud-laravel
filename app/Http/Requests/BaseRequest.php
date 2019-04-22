@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use App\Helpers\Helper;
 
 class BaseRequest extends FormRequest
 {
@@ -75,7 +76,7 @@ class BaseRequest extends FormRequest
             foreach ($attr as $value) {
                 $getValue = $this->request->get($value);
                 if (!empty($getValue)) {
-                    $this->request->set($value, entradapadronizada($getValue));
+                    $this->request->set($value, Helper::entradapadronizada($getValue));
                 }
             }
         }

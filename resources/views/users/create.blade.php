@@ -3,16 +3,16 @@
 @section('content')
         <div class="row">
             <div class="col-sm-12">
-                <h2 class="pull-left">Cadastrar $MODEL_NAME_HUMAN$</h2>
+                <h2 class="pull-left">Cadastrar Usuário</h2>
             </div>
         </div>
 
         @include('core-templates::common.errors')
 
-        {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
+        {!! Form::model($user, ['route' => ['users.store'], 'method' => 'post']) !!}
 
             <div class="row">
-                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+                @include('users.fields')
             </div>
 
         {!! Form::close() !!}

@@ -5,7 +5,7 @@
  */
 form .required:after {
   content: "*";
-  color: red;
+  color: #af0000;
   font-weight: bold;
   font-size: 20px;
   position: absolute;
@@ -17,6 +17,14 @@ form input[type=checkbox].required:after,
 form input[type=radio].required:after {
   padding-left: 15px !important;
   margin-top: -8px !important;
+}
+
+/** menu */
+.nav .nav-item {
+  width: 100%;
+}
+.nav .nav-link {
+  border-radius: 0;
 }
 
 /**
@@ -37,7 +45,7 @@ and open the template in the editor.
 */
 /* 
     Created on : 07/11/2018, 09:56:36
-    Author     : Eduardo Matias <eduardomatias@pbh.gov.br/eduardomatias.1989@gmail.com>
+    Author     : Eduardo Matias <eduardomatias.1989@gmail.com>
 */
 .data-red {
   color: red;

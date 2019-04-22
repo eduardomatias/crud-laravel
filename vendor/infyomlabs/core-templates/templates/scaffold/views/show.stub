@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.main')
 
 @section('content')
     @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show_fields')

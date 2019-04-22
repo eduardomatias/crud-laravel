@@ -13,7 +13,7 @@
 
  /** Index */
 Route::get('/', function() {	
-  return view('index');
+  return redirect('login');
 });
 
 /** Login */
@@ -30,3 +30,7 @@ Route::group(['middleware' => 'auth'], function() {
     });
     
 });
+
+Route::resource('users', 'UserController');
+
+Route::resource('users', 'UserController');

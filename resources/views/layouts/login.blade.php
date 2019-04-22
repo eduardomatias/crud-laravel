@@ -24,7 +24,7 @@
                 <div id='loading' class="loader loader-default"></div>
             </div>
         </section>
-		<div class="row justify-content-center mt-5">
+		<div class="row justify-content-center m-0 mt-5">
 			<div class="col-sm-8">
 				@include('layouts.footer')
 			</div>

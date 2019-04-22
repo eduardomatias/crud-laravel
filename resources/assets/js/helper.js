@@ -213,21 +213,6 @@ var Helper = {
             }
         });
     },
-    getEnderecoGeocoder: function (param, callback) {
-        this.ajaxGet('http://geocoder.pbh.gov.br/geocoder/v1/address?', param, function (r) {
-            var retorno = {};
-            retorno.param = param;
-            retorno.endereco = (typeof r.endereco[0] !== 'undefined') ? r.endereco[0] : r.endereco;
-            retorno.status = true;
-                
-            if (r.status !== 'ok' || typeof retorno.endereco === 'undefined' || !retorno.endereco.id) {
-                retorno.msg = 'Endereço não localizado, favor buscar novamente.';
-                retorno.status = false;
-            }
-            
-            callback(retorno);
-        });
-    },
     autoComplete: function (idSelect, url, attrName, callbackSelectItem, option = {}){
         /**
          * option
