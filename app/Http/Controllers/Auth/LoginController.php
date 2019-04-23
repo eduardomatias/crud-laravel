@@ -28,11 +28,11 @@ class LoginController extends AppBaseController
      *
      * @var string
      */
-    protected $redirectTo = '';
+    protected $redirectTo = '/users';
 
     public function username()
     {
-        return 'login';
+        return 'email';
     }
 
     /**

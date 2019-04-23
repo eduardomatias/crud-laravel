@@ -52,15 +52,7 @@ var Helper = {
                     callback(data);
                 }
             });
-        },
-        seriesEnsino: function(selectName, idTpEnsino, callback) { 
-            Helper.ajaxGet(Helper.baseUrl() + '/serieEnsino/combo/' + idTpEnsino, null, function(data) {
-                Helper.addOptionsSelect(selectName, data);
-                if(typeof callback === 'function') {
-                    callback(data);
-                }
-            });
-        },
+        }
     },
     mask: {
         cpf: function(name, clearIfNotMatch) {this._addMask(name, '000.000.000-00', clearIfNotMatch);},
@@ -68,7 +60,6 @@ var Helper = {
         data: function(name, clearIfNotMatch) {this._addMask(name, '00/00/0000', clearIfNotMatch);},
         telefone: function(name, clearIfNotMatch) {this._addMask(name, '#00000000', clearIfNotMatch);},
         dddTelefone: function(name, clearIfNotMatch) {this._addMask(name, '(00)000000000', clearIfNotMatch);},
-        cartaoBHBus: function(name, clearIfNotMatch) {this._addMask(name, '00000000000000-0', clearIfNotMatch);},
         _addMask: function (inputName, format, clearIfNotMatch) {
             var nameArray = (!Array.isArray(inputName)) ? [inputName] : inputName,
                 clear = !(clearIfNotMatch === false),

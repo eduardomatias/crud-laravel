@@ -3,17 +3,17 @@
 @section('content')
 
 <div class="row justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-5">
         <form class="form-signin" role="form" method="POST" action="{{ url('/login') }}">
             {!! csrf_field() !!}
 
-            <div class="form-group{{ $errors->has('login') ? ' has-error' : '' }}">
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                 <div class="col-md-12">
                     <label class="control-label">Usuário</label>
-                    <input type="login" class="form-control" name="login" value="{{ old('login') }}">
-                    @if ($errors->has('login'))
+                    <input type="text" class="form-control" name="email" value="{{ old('email') }}">
+                    @if ($errors->has('email'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('login') }}</strong>
+                            <strong>{{ $errors->first('email') }}</strong>
                         </span>
                     @endif
                 </div>
