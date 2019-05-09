@@ -5,3 +5,5 @@
 @include('layouts.modal')
 
 <script type="text/javascript" src="{{ url('/js/app.js') }}"></script>
+<script type="text/javascript" src="{{ url('/js/helper.js') }}"></script>
+<script type="text/javascript" src="{{ url('/js/jquery.maskMoney.js') }}"></script>

@@ -3,6 +3,8 @@
 namespace InfyOm\Generator\Common;
 
 use Exception;
+use App\Helpers\Helper;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Container\Container as Application;
 
 abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepository
@@ -22,6 +24,10 @@ abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepositor
         }
     }
     
+    public function getKey() {
+        return $this->model->getKeyName();
+    }
+
     /**
      * Verfifica se o registro existe a partir do ID
      * 
@@ -72,6 +78,7 @@ abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepositor
 
         // obtem dados do combo
         $data = $this->orderBy(($columns_order ?: $columns_value))->get([$columns_key, $columns_value_select]);
+        $data = $data->unique($columns_key)->values()->all();
 
         // format combo
         $combo = array();
@@ -79,7 +86,7 @@ abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepositor
             $combo[''] = "Selecione";
         }
         foreach ($data as $d) {
-            $combo[$d->$columns_key] = $d->$columns_value;
+            $combo[$d->$columns_key] = Helper::utf8($d->$columns_value);
         }
 
         return $combo;
@@ -95,7 +102,7 @@ abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepositor
 
         $model = $this->updateRelations($model, $attributes);
         $model->save();
-
+        $model->lastInsertId = DB::getPdo()->lastInsertId();
         return $this->parserResult($model);
     }
 
